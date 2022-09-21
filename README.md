@@ -17,6 +17,6 @@ This project became necessary out of four reasons:
 
 ## How?
 
-The main concept of this module is to make no assumptions about the project structure. The partials for generating the meta tags will call other partials to get the necessary content. These content partials can be replaced by the project or theme maintainers using this module. Therefore, the way they retrieve the necessary data is completely configurable.
+The main concept of this module is to make **no assumptions about the project structure**. The partials for generating the meta tags will call other partials to get the necessary content. These content partials can be replaced by the project or theme maintainers using this module. Therefore, the way they retrieve the necessary data is completely configurable.
 
 The output obviously doesn’t need any configuration. The resulting `<meta>`-tags need to follow the demands of the providers we like to use. So the correct results of the provided partials are predictable. They should adapt to any changes of the specifications by the social network providers.  
