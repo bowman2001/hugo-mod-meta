@@ -1,0 +1,21 @@
+{{ $title_partial := site.Params.meta.twitter_title_partial | default "head/meta/func/twitter_title.html" -}}
+{{ $desc_partial := site.Params.meta.twitter_desc_partial | default "head/meta/func/twitter_desc.html" -}}
+{{ $image_partial := site.Params.meta.twitter_img_partial | default "head/meta/func/twitter_img.html" -}}
+{{ $site_partial := site.Params.meta.twitter_site | default "head/meta/func/twitter_site.html" -}}
+
+{{ $img := partial (print $image_partial) . -}}
+{{ if partial "meta/func/twitter_valid_img.html" $img -}}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ $img.Permalink }}">
+{{ else }}
+  <meta name="twitter:card" content="summary">
+{{ end }}
+{{ with partial (print $title_partial) . -}}
+  <meta name="twitter:title" content="{{ . }}">
+{{ end }}
+{{ with partial (print $desc_partial) . -}}
+  <meta name="twitter:description" content="{{ . }}">
+{{ end }}
+{{ with partial (print $site_partial) . -}}
+  <meta name="twitter:site" content="{{ . }}">
+{{ end }}
