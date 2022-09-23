@@ -5,7 +5,7 @@
 {{ $author_partial := site.Params.meta.twitter_creator | default "head/meta/func/twitter_creator.html" -}}
 
 {{ $has_img := false }}
-{{ with partial "head/meta/func/check-eval-partial.html" (dict "partial" $image_partial "page" . ) }}
+{{ with partial "head/meta/func/partial.html" (dict "partial" $image_partial "page" . ) }}
     {{ if (partial "head/meta/func/twitter_valid_img.html" . ) -}}
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:image" content="{{ .Permalink }}">
@@ -15,15 +15,15 @@
 {{ if not $has_img }}
   <meta name="twitter:card" content="summary">
 {{ end }}
-{{ with partial "head/meta/func/check-eval-partial.html" (dict "partial" $title_partial "page" . ) }}
+{{ with partial "head/meta/func/partial.html" (dict "partial" $title_partial "page" . ) }}
   <meta name="twitter:title" content="{{ . }}">
 {{ end }}
-{{ with partial "head/meta/func/check-eval-partial.html" (dict "partial" $desc_partial "page" . ) }}
+{{ with partial "head/meta/func/partial.html" (dict "partial" $desc_partial "page" . ) }}
   <meta name="twitter:description" content="{{ . }}">
 {{ end }}
-{{ with partial "head/meta/func/check-eval-partial.html" (dict "partial" $site_partial "page" . ) }}
+{{ with partial "head/meta/func/partial.html" (dict "partial" $site_partial "page" . ) }}
   <meta name="twitter:site" content="@{{ . }}">
 {{ end }}
-{{ with partial "head/meta/func/check-eval-partial.html" (dict "partial" $author_partial "page" . ) }}
+{{ with partial "head/meta/func/partial.html" (dict "partial" $author_partial "page" . ) }}
   <meta name="twitter:creator" content="@{{ . }}">
 {{ end }}
