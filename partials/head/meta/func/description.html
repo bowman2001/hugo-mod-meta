@@ -2,8 +2,6 @@
 {{ with .Summary }}
     {{ $desc = ( partial "replacements.html" . ) }}
 {{ else }}
-    {{ with .Description }}
-        {{ $desc = . | site.Home.RenderString }}
-    {{ end }}
+    {{ warnf "Unable to get a summary for %s." . }}
 {{ end }}
 {{ return ($desc | plainify | htmlUnescape) }}

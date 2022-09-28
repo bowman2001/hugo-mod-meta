@@ -1,0 +1,39 @@
+{{ $title_partial := site.Params.meta.title | default "head/meta/func/title.html" -}}
+{{ $desc_partial := site.Params.meta.description | default "head/meta/func/description.html" -}}
+{{ $image_partial := site.Params.meta.img | default "head/meta/func/img.html" -}}
+{{ $site_partial := site.Params.meta.site | default "head/meta/func/twitter/site.html" -}}
+{{ $author_partial := site.Params.meta.twitter.creator | default "head/meta/func/twitter/creator.html" -}}
+
+
+{{ with partial "head/partial.html" (dict "partial" $title_partial "page" . ) }}
+  <meta property="og:title" content="{{ . }}">
+{{ end }}
+{{ with partial "head/partial.html" (dict "partial" $desc_partial "page" . ) }}
+  <meta property="og:description" content="{{ . }}">
+{{ end }}
+{{ with partial "head/partial.html" (dict "partial" $image_partial "page" . ) }}
+    {{ if (partial "head/meta/func/opengraph/is-img-valid.html" . ) -}}
+      <meta property="og:image" content="{{ .Permalink }}">
+    {{ end }}
+{{ end }}
+
+
+<meta property="og:url" content="{{ .PermaLink }}">
+
+{{ with partial "head/partial.html" (dict "partial" $image_partial "page" . ) }}
+    {{ if (partial "head/meta/func/twitter/is-img-valid.html" . ) -}}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="{{ .Permalink }}">
+    {{ end }}
+{{ end }}
+
+
+{{ with partial "head/partial.html" (dict "partial" $desc_partial "page" . ) }}
+  <meta name="twitter:description" content="{{ . }}">
+{{ end }}
+{{ with partial "head/partial.html" (dict "partial" $site_partial "page" . ) }}
+  <meta name="twitter:site" content="@{{ . }}">
+{{ end }}
+{{ with partial "head/partial.html" (dict "partial" $author_partial "page" . ) }}
+  <meta name="twitter:creator" content="@{{ . }}">
+{{ end }}
