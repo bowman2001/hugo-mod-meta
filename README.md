@@ -23,7 +23,7 @@ There are some default templates to start with, but to assure the correct input 
 
 The output obviously doesn’t need any configuration. The resulting `<meta>`-tags need to follow the demands of the providers we like to use. So the correct results of the provided partials are predictable. They should adapt in time to any changes of the specifications by the social network providers.  
 
-## Specicications 
+## Specifications 
 
 - Twitter: <https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup> 
 
