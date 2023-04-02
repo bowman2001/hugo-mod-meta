@@ -31,15 +31,9 @@ The output doesn’t need a lot of configuration. The resulting tags and schema 
 - Opengraph: <https://ogp.me/>
 - Schema (JSON-LD): <https://developers.google.com/search/docs/advanced/structured-data/search-gallery>
 
-### Twitter
-Lets start with the most important tags:
-- Title allows max 70 characters.
-- Description allows max 200 characters.
-- Image (one) needs to be a WEBP, JPEG, PNG or a GIF. No SVG and animated GIF won’t animate.
-
-### Opengraph
-
-### Schema
-
 ## Testing
 The social network or search engine providers offer validation tools.
+TODO: Add links
+
+## Alternatives
+[SEO module by the New Dynamic](https://github.com/theNewDynamic/hugo-module-tnd-seo)
