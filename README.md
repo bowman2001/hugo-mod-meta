@@ -1,6 +1,6 @@
 # hugo-mod-meta
 
-This module generates the title, many meta tags and and JSON+LD schema scripts for [Hugo](https://gohugo.io) pages. These are processed by search engines and social networks to create a better preview of the content on their pages.
+This module generates the title, many meta tags and and JSON+LD schema scripts for [Hugo](https://gohugo.io) pages. These are processed by search engines and social networks to create some kind of preview on their pages.
 
 Hugo already offers a set of internal templates for this purpose:
 - [**Open Graph**](https://gohugo.io/templates/internal/#open-graph) for Facebook and others
