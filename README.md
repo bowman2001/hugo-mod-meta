@@ -1,13 +1,13 @@
 # hugo-mod-meta
 
-This module generates the title tag and meta tags for a Hugo website. These tags are processed by search engines and social networks. Special schema data in the format JSON-LD is created for search engines. Social networks have defined opengraph and twitter tags, which are also created.
+This module generates the title, many meta tags and and JSON+LD schema scripts for [Hugo](https://gohugo.io) pages. These are processed by search engines and social networks to create a better preview of the content on their pages.
 
 Hugo already offers a set of internal templates for this purpose:
 - [**Open Graph**](https://gohugo.io/templates/internal/#open-graph) for Facebook and others
 - [**Twitter Cards**](https://gohugo.io/templates/internal/#twitter-cards)
 - The **Schema** template is undocumented but is using the same concept as the other two templates
 
-The Hugo templates are doing fine if we stick to the data parameters and the content organization they expect. They are the starting point for this project.
+The Hugo templates are doing fine as long as we stick to the data parameters and the content organization they expect. They were the starting point for this project.
 
 ## Why this new module then?
 
@@ -19,11 +19,11 @@ This project became necessary out of four reasons:
 
 ## How?
 
-The main concept of this module is to make **no static assumptions about the project structure and configuration**. The partials for generating the meta tags call other partials to get the necessary content. These content partials can be replaced to get the necessary data in a completely configurable way. 
+The main concept of this module is to make **no fixed assumptions about the project structure and configuration**. The partials for generating the meta tags call other partials to get the necessary content. These content partials can be replaced in every project to fit its structure. 
 
-But you don’t have to write those partials from scratch. There are some default templates to start with, which resemble the internal Hugo way.  
+We don’t have to write all those partials from scratch. There are default templates to start with, which resemble the internal Hugo way.  
 
-The output doesn’t need a lot of configuration. The resulting `<meta>`-tags need to follow the demands of the internet services we like to address. The correct results of the provided partials are predictable. They should adapt in time to any changes of the specifications by social network and search providers.  
+The output doesn’t need a lot of configuration. The resulting tags and schema scripts need to follow the demands of the internet services we like to address. The correct results of the provided partials are predictable. They should adapt in time to any changes of the specifications by social network and search providers.  
 
 ## Specifications 
 
