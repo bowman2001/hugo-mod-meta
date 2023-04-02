@@ -19,7 +19,7 @@ This project became necessary out of four reasons:
 
 ## How?
 
-The main concept of this module is to make **no fixed assumptions about the project structure and configuration**. The partials for generating the meta tags call other partials to get the necessary content. These content partials can be replaced in every project to fit its structure. 
+The main concept of this module is to make **no fixed assumptions about the project structure**. The partials for generating the meta tags call other partials to get the necessary content. These content partials can be replaced in every project to fit its structure. 
 
 We don’t have to write all those partials from scratch. There are default templates to start with, which resemble the internal Hugo way.  
 
