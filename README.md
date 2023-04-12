@@ -14,14 +14,14 @@ The Hugo templates are doing fine as long as we stick to the data parameters and
 This project became necessary out of four reasons:
 1. My image resources are often organized in a way the internal Hugo partials can’t find them.
 2. My content structure is different from what these templates expect. (Simple example: The `.Description` only contains a very short description of the content for navigation links which is too short for the description meta tag. I like to use a dedicated SEO description or at least a `.Summary` with one or two full sentences to appear there.) 
-3. The Hugo maintainers and core developers are stretched thin and don’t find the time to review pull requests for internal template code. There are many stale PRs for these templates with reasonable small improvements. This module should provide an alternative, because I don’t want to bother the Hugo maintainers with template problems I can program ourselves.
+3. The Hugo maintainers and core developers are stretched thin and don’t find the time to review pull requests for internal template code. There are many stale PRs for these templates with reasonable small improvements. This module should provide an alternative, because I don’t want to bother the Hugo maintainers with template problems I can write myself.
 4. Reusability: I don’t want to think about meta tags more than absolutely necessary and will include this module in every project of mine. From reading discussions between other developers I get the impression they also reinvented the generation of these tags repeatedly in their projects. The overhead of using a configurable module should pay off fast.
 
 ## How?
 
 The main concept of this module is to make **no fixed assumptions about the project structure**. The partials for generating the meta tags call other partials to get the necessary content. These content partials can be replaced in every project to fit its structure. 
 
-We don’t have to write all those partials from scratch. There are default templates to start with, which resemble the internal Hugo way.  
+But we don’t have to write all those partials from scratch. There are default templates to start with, which resemble the internal Hugo way.  
 
 The output doesn’t need a lot of configuration. The resulting tags and schema scripts need to follow the demands of the internet services we like to address. The correct results of the provided partials are predictable. They should adapt in time to any changes of the specifications by social network and search providers.  
 
