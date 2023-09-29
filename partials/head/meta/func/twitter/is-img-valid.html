@@ -10,7 +10,7 @@
 {{ $formats := (slice "webp" "jpeg" "png" "gif") }}
 {{ $max_side := 4096 }}
 {{ $max_filesize := 5242880 }}
-{{ $filesize := (os.Stat .Key).Size }}
+{{ $filesize := (os.Stat .RelPermalink).Size }}
 {{ if not (in $formats .MediaType.SubType) }}
     {{ warnf "Unable to use the image '%s' for the Twitter meta tag. Only %v are supported." .RelPermalink $formats }}
 {{ else if not (and (lt .Width $max_side) (lt .Height $max_side) ) }}
