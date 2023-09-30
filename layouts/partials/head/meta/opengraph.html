@@ -12,6 +12,9 @@
   <meta property="og:description" content="{{ . }}">
 {{ end }}
 {{ with partial "head/partial.html" (dict "partial" $image_partial "page" . ) -}}
+    {{- if not (os.FileExists .Key) }}
+      {{ warnf "No file: %v" . }}
+    {{- end }}
     {{- if (partial "head/meta/func/twitter/is-img-valid.html" . ) -}}
       <meta property="og:image:url" content="{{ .Permalink }}">
       <meta property="og:image:width" content="{{ .Width }}">
